@@ -1,0 +1,29 @@
+{
+  "name": "homecooked",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"node --watch server/index.js\" \"vite --host 0.0.0.0\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test",
+    "service:install": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Install",
+    "service:uninstall": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Uninstall",
+    "service:start": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Start",
+    "service:stop": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Stop",
+    "service:restart": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Restart",
+    "service:status": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/windows-service.ps1 -Action Status"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "lucide-react": "^0.468.0",
+    "react-markdown": "^10.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.0",
+    "concurrently": "^9.1.2"
+  }
+}
